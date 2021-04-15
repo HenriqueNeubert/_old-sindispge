@@ -43,8 +43,8 @@
                                         <?php while( have_rows('convenios') ): the_row();
                                             $image = get_sub_field('imagem');
                                             ?>
-                                            <div class="f-left">
-                                                <a class="w-100" href="<?php the_permalink(); ?>" title="Advocacia">
+                                            <div class="w-100">
+                                                <a class="" href="<?php the_permalink(); ?>" title="Advocacia">
                                                     <figure class="w-100 d_flex wrap direction-column justify-center">
                                                         <img class="self-center" src="<?php echo $image["sizes"]["post-convenios"] ?>" title="" alt="" />
                                                     </figure>

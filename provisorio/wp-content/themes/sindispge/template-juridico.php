@@ -22,7 +22,25 @@ get_header();
     <section class="w-100 p-top-100 p-bottom-100">
         <div class="center container">
 <?php if (have_posts()) : the_post(); ?>
-            <article class="w-100 d_flex wrap justify-space direction-800-column t-align-800-c">
+
+
+    <?php if( have_rows('convenios') ): ?>
+        <div class="w-100 slider-slick-covenant">
+            <?php while( have_rows('convenios') ): the_row();
+                $image = get_sub_field('imagem');
+                ?>
+                <div class="f-left">
+                    <a class="w-100" href="<?php the_permalink(); ?>" title="Advocacia">
+                        <figure class="w-100 d_flex wrap direction-column justify-center">
+                            <img class="self-center" src="<?php echo $image["sizes"]["post-convenios"] ?>" title="" alt="" />
+                        </figure>
+                    </a>
+                </div>
+            <?php endwhile; ?>
+        </div>
+    <?php endif; ?>
+
+            <article class="w-100 d_flex wrap justify-space direction-800-column t-align-800-c"> <!--parte-1-->
                 <section class="w-200-px self-center m-right-50-px w-800-100">
                     <article class="title d_flex wrap active smooth justify-1024-center">
                         <h1 class="self-center">
@@ -36,13 +54,56 @@ get_header();
                         <img class="display-inline-block max-w-100" src="<?php echo get_template_directory_uri(); ?>/uploads/page/juridico.png" title="" alt="" />
                     </figure>
                 </section>
-                <aside class="flex-1 self-center m-top-800-30">
-                    <div class="w-100 text text-3 text-column">
-                        <?php the_content(); ?>
-                    </div>
+                <aside class="flex-1 self-center m-top-800-30"> <!--repetidor-->
+                    <?php
+                        if( have_rows('servicos_juridico') ):
+                        while( have_rows('servicos_juridico') ) : the_row();
+                        ?>
+
+                           <div class="w-100 m-top-30">
+                               <div class="flex-1 w-800-100">
+                                    <h4 class="title-2">
+                                        <?php the_sub_field('title_service'); ?>
+                                    </h4>
+                                    <div class="w-100 text text-3 m-top-20">
+                                        <?php the_sub_field('description_service'); ?>
+                                    </div>
+                               </div>
+                               <aside class="w-60 w-800-100 p-left-15-px">
+                                   <?php
+                                   if(!empty($servicos["image_service_1"])):
+                                       ?>
+                                       <div class="w-100">
+                                           <img src="<?php echo $servicos["image_service_1"]["sizes"]["post-blog"]; ?>" class="w-100" alt="<?php echo $servicos["image_service_1"]["alt"]; ?>" title="<?php echo $servicos["image_service_1"]["description"]; ?>">
+                                       </div>
+                                   <?php endif; ?>
+
+                                   <?php
+                                   if(!empty($vantagem["image_service_2"])):
+                                       ?>
+                                       <div class="w-100 m-top-20">
+                                           <img src="<?php echo $vantagem["image_service_2"]["sizes"]["post-blog"]; ?>" class="w-100" alt="<?php echo $vantagem["image_service_2"]["alt"]; ?>" title="<?php echo $vantagem["image_service_2"]["description"]; ?>">
+                                       </div>
+                                   <?php endif; ?>
+
+                                   <?php
+                                   if(!empty($vantagem["description_image_2"])):
+                                       ?>
+                                       <div class="w-100">
+                                           <img src="<?php echo $vantagem["description_image_2"]["sizes"]["800"]; ?>" class="w-100" alt="<?php echo $vantagem["description_image_2"]["alt"]; ?>" title="<?php echo $vantagem["description_image_2"]["description"]; ?>">
+                                       </div>
+                                   <?php endif; ?>
+                               </aside>
+                           </div>
+                    <?php
+                        endwhile;
+                        endif;
+                    ?>
                 </aside>
             </article>
-            <article class="w-100 m-top-80 d_flex wrap justify-space direction-800-column t-align-800-c">
+
+
+            <article class="w-100 m-top-80 d_flex wrap justify-space direction-800-column t-align-800-c"> <!--parte-2-->
                 <section class="w-200-px m-right-50-px display-800-none">
                 </section>
                 <aside class="flex-1 d_flex wrap">
@@ -67,6 +128,8 @@ get_header();
                     ?>
                 </aside>
             </article>
+
+
 <?php endif; ?>
         </div>
     </section>

@@ -240,6 +240,13 @@ header {
                 max-height: 95px;
             }
         }
+        a{
+            margin-top: 20px;
+            @include font($main-color, 1.8em, 500, 1.4em);
+            &:hover{
+                color: $secondary-color;
+            }
+        }
     }
 }
 .list-news{
@@ -266,7 +273,7 @@ header {
                 }
             }
             > span{
-                @include font($secondary-color-1, 1.4em,);
+                @include font($secondary-color-1, 1.4em);
             }
         }
     }
@@ -449,6 +456,49 @@ span.wpcf7-not-valid-tip {
 div.wpcf7-validation-errors, div.wpcf7-acceptance-missing{
     color: #C11C2D!important;
 }
+
+
+.list-service{ background: red!important;
+    .item{
+        margin-top: 40px!important;
+        &:last-of-type{
+            margin-top: 0!important;
+        }
+    }
+}
+
+.pagination{
+    a{
+        line-height: 1.4em!important;
+        font-size: 18px;
+        font-style: normal !important;
+        color: $black!important;
+        border: none!important;
+        padding: 15px!important;
+        &:hover{
+            background: transparent!important;
+            color: $secondary_color_1!important;
+            font-weight: 700!important;
+            text-decoration: none !important;
+        }
+    }
+    span{
+        background: transparent!important;
+        border: none!important;
+        color: $secondary_color_1 !important;
+        font-size: 26px;
+        font-style: normal !important;
+        font-weight: 700 !important;
+        line-height: 1.4em!important;
+        padding: 15px!important;
+    }
+    .prev, .next{
+        font-size: 18px;
+    }
+}
+
+
+
 
 @import "style-henrique";
 @import "responsive";

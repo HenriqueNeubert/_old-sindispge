@@ -54,6 +54,9 @@
                 </div>
                 <?php endwhile; ?>
                 <?php endif; ?>
+                <div class="w-100 d_flex justify-center wrap pagination m-top-30">
+                    <?php wordpress_pagination(); ?>
+                </div>
             </article>
         </div>
     </section>
