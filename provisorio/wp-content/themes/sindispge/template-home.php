@@ -105,11 +105,27 @@ get_header();
             </article>
         </div>
     </section>
-    <article class="w-100 d_flex wrap list-services-featured direction-800-column">
-        <a class="w-50 t-align-c item w-800-100" style="background: url(<?php echo get_template_directory_uri(); ?>/uploads/page/test.jpg) no-repeat;" href="juridico" title="Jurídico">
+<?php  ?>
+    <article class="w-100 d_flex wrap list-services-featured direction-800-column justify-center">
+
+
+        <a class="w-50 t-align-c item w-800-100" <?php if( get_field("image_service_home")){ ?>style="background: url('<?php echo get_field("image_service_home")['url'] ?>') no-repeat;" <?php } ?> href="<?php the_field('link_service_home'); ?>" title="Jurídico">
             <aside class="w-100 bg-white-transparent">
                 <strong class="w-100 color-grey title-2">
-                    Jurídico
+                    <?php the_field('title_service_home'); ?>
+                </strong>
+                <div class="w-100 m-top-30 t-align-c">
+                    <span class="display-inline-block btn btn-2 pointer">
+                        SAIBA MAIS
+                    </span>
+                </div>
+            </aside>
+        </a>
+
+        <a class="w-50 t-align-c item w-800-100" <?php if( get_field("image_service_home_2")){ ?>style="background: url('<?php echo get_field("image_service_home_2")['url'] ?>') no-repeat;" <?php } ?> href="<?php the_field('link_service_home_2'); ?>"  title="Associdados">
+            <aside class="w-100 bg-white-transparent">
+                <strong class="w-100 color-grey title-2">
+                    <?php the_field('title_service_home_2'); ?>
                 </strong>
                 <div class="w-100 m-top-30 t-align-c">
                     <span class="display-inline-block btn btn-2">
@@ -118,19 +134,10 @@ get_header();
                 </div>
             </aside>
         </a>
-        <a class="w-50 t-align-c item w-800-100" style="background: url(<?php echo get_template_directory_uri(); ?>/uploads/page/test.jpg) no-repeat;" href="associados" title="Associdados">
-            <aside class="w-100 bg-white-transparent">
-                <strong class="w-100 color-grey title-2">
-                    Associado
-                </strong>
-                <div class="w-100 m-top-30 t-align-c">
-                    <span class="display-inline-block btn btn-2">
-                        SAIBA MAIS
-                    </span>
-                </div>
-            </aside>
-        </a>
+
+
     </article>
+<?php ?>
     <section class="w-100 p-top-100 p-bottom-100 bg-white-1">
         <div class="center">
             <article class="w-100 container d_flex wrap justify-center title">

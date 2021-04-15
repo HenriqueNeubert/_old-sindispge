@@ -54,73 +54,59 @@ get_header();
                         <img class="display-inline-block max-w-100" src="<?php echo get_template_directory_uri(); ?>/uploads/page/juridico.png" title="" alt="" />
                     </figure>
                 </section>
-                <aside class="flex-1 self-center m-top-800-30"> <!--repetidor-->
-                    <?php
-                        if( have_rows('servicos_juridico') ):
-                        while( have_rows('servicos_juridico') ) : the_row();
-                        ?>
+                <aside class="flex-1 self-center m-top-800-30">
+                    <div class="w-100 text text-3 text-column">
+                        <?php the_content(); ?>
+                    </div>
+                </aside>
+            </article>
+            <aside class="w-100 self-center"> <!--repetidor-->
 
-                           <div class="w-100 m-top-30 d_flex wrap">
-                               <div class="flex-1 w-800-100">
-                                    <h4 class="title-2">
-                                        <?php the_sub_field('title_service'); ?>
-                                    </h4>
-                                    <div class="w-100 text text-3 m-top-20">
-                                        <?php the_sub_field('description_service'); ?>
+                <div class="w-100 m-top-30">
+                    <h3 class="title-2 f-size-40 t-align-c">
+                        Advogados Conveniados
+                    </h3>
+                </div>
+                <?php
+                if(have_rows('servicos_juridico') ){
+                ?>
+                <div class="w-100 m-top-30 list-juridico">
+                <?php
+                    while( have_rows('servicos_juridico') ) : the_row();
+                        ?>
+                        <div class="w-100 item d_flex wrap">
+                            <div class="flex-1 w-800-100 d_flex wrap direction-column justify-center">
+                                <h4 class="title-2">
+                                    <?php the_sub_field('title_service'); ?>
+                                </h4>
+                                <div class="w-100 text text-3 m-top-20">
+                                    <?php the_sub_field('description_service'); ?>
+                                </div>
+                            </div>
+                            <aside class="w-50 w-800-100 p-left-15-px">
+                                <?php
+                                $image = get_sub_field('image_service_1');
+                                if( !empty( $image ) ): ?>
+                                    <div class="w-100">
+                                        <img class="max-w-100" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                                     </div>
-                               </div>
-                               <aside class="w-60 w-800-100 p-left-15-px">
-                                   <?php
-                                   $image = get_sub_field('image_service_1');
-                                   if( !empty( $image ) ): ?>
-                                   <div class="w-100">
-                                       <img class="max-w-100" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                                   </div>
-                                   <?php endif; ?>
-                                   <?php
-                                   $image2 = get_sub_field('image_service_2');
-                                   if( !empty( $image2 ) ): ?>
-                                       <div class="w-100">
-                                           <img class="max-w-100" src="<?php echo esc_url($image2['url']); ?>" alt="<?php echo esc_attr($image2['alt']); ?>" />
-                                       </div>
-                                   <?php endif; ?>
-
-                               </aside>
-                           </div>
+                                <?php endif; ?>
+                            </aside>
+                        </div>
                     <?php
-                        endwhile;
-                        endif;
-                    ?>
-                </aside>
-            </article>
-
-
-            <article class="w-100 m-top-80 d_flex wrap justify-space direction-800-column t-align-800-c"> <!--parte-2-->
-                <section class="w-200-px m-right-50-px display-800-none">
-                </section>
-                <aside class="flex-1 d_flex wrap">
-                    <?php
-                    if( get_field("imagem_1")){
-                        ?>
-                        <figure class="flex-1 self-center t-align-c w-600-100">
-                            <img class="display-inline-block max-w-100" src="<?php echo get_field("imagem_1")["sizes"]["post-convenios"] ?>" title="" alt="" />
-                        </figure>
-                        <?php
-                    }
-                    ?>
-                    <?php
-                    if( get_field("imagem_2")){
-                        ?>
-                        <figure class="flex-1 self-center m-left-40-px w-600-100 m-top-600-20">
-                            <img class="w-100" src="<?php echo get_field("imagem_2")["sizes"]["post-convenios"] ?>" title="" alt="" />
-
-                        </figure>
-                        <?php
-                    }
-                    ?>
-                </aside>
-            </article>
-
+                    endwhile;
+                ?>
+                </div>
+                <?php
+                    }else {
+                ?>
+                <h2 class="w-100 t-align-c m-top-60 title-2 secondary-color m-top-1024-30">
+                    Nenhum Serviço encontrado!
+                </h2>
+                <?php
+                }
+                ?>
+            </aside>
 
 <?php endif; ?>
         </div>

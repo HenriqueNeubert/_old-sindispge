@@ -48,9 +48,11 @@
                                 <figure class="w-100 d_flex wrap direction-column justify-center">
                                     <img class="self-center" src="<?php echo $image["sizes"]["post-convenios"] ?>" title="" alt="" />
                                 </figure>
-                                <a class="w-100 t-align-c" href="<?php the_permalink(); ?>">
-                                    Leia Mais
-                                </a>
+                                <div class="w-100 d_flex wrap justify-center">
+                                    <a class="btn t-align-c" href="<?php the_permalink(); ?>">
+                                        Leia Mais
+                                    </a>
+                                </div>
                             </div>
                         <?php endwhile; ?>
                 <?php endif; ?>

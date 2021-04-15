@@ -32,8 +32,10 @@ function scrollHeader(){
 	}
     if(y >= hBanner){
         $('header').addClass('fixed');
+        $('header').addClass('bg-white');
     }else{
         $('header').removeClass('fixed');
+        $('header').removeClass('bg-white');
     }
 }
 $('body').append('<span class="fixed top-0 left-0 top-fix"></span>');

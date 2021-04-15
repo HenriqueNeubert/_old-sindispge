@@ -242,7 +242,7 @@ header {
         }
         a{
             margin-top: 20px;
-            @include font($main-color, 1.8em, 500, 1.4em);
+            @include font($main-color, 1.8em, 500, 1em);
             &:hover{
                 color: $secondary-color;
             }
@@ -486,7 +486,7 @@ div.wpcf7-validation-errors, div.wpcf7-acceptance-missing{
         background: transparent!important;
         border: none!important;
         color: $main_color !important;
-        font-size: 26px;
+        font-size: 18px;
         font-style: normal !important;
         font-weight: 700 !important;
         line-height: 1.4em!important;
@@ -497,8 +497,20 @@ div.wpcf7-validation-errors, div.wpcf7-acceptance-missing{
     }
 }
 
-
-
+.list-juridico{
+  .item{
+    &:nth-of-type( 2n ) {
+      > div{
+        @extend .flex-order-2;
+      }
+      aside{
+        @extend .flex-order-1;
+        padding:0!important;
+        margin-right: 15px;
+      }
+    }
+  }
+}
 
 @import "style-henrique";
 @import "responsive";
