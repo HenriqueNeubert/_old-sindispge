@@ -12,7 +12,7 @@ get_header();
             <article class="w-100">
                 <div class="center container">
                     <div class="w-100 m-bottom-80">
-                        <strong strong class="w-100">
+                        <strong class="w-100">
                             Informativos
                         </strong>
                     </div>

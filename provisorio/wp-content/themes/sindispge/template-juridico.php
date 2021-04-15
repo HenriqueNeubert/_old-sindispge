@@ -60,7 +60,7 @@ get_header();
                         while( have_rows('servicos_juridico') ) : the_row();
                         ?>
 
-                           <div class="w-100 m-top-30">
+                           <div class="w-100 m-top-30 d_flex wrap">
                                <div class="flex-1 w-800-100">
                                     <h4 class="title-2">
                                         <?php the_sub_field('title_service'); ?>
@@ -71,28 +71,20 @@ get_header();
                                </div>
                                <aside class="w-60 w-800-100 p-left-15-px">
                                    <?php
-                                   if(!empty($servicos["image_service_1"])):
-                                       ?>
+                                   $image = get_sub_field('image_service_1');
+                                   if( !empty( $image ) ): ?>
+                                   <div class="w-100">
+                                       <img class="max-w-100" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                   </div>
+                                   <?php endif; ?>
+                                   <?php
+                                   $image2 = get_sub_field('image_service_2');
+                                   if( !empty( $image2 ) ): ?>
                                        <div class="w-100">
-                                           <img src="<?php echo $servicos["image_service_1"]["sizes"]["post-blog"]; ?>" class="w-100" alt="<?php echo $servicos["image_service_1"]["alt"]; ?>" title="<?php echo $servicos["image_service_1"]["description"]; ?>">
+                                           <img class="max-w-100" src="<?php echo esc_url($image2['url']); ?>" alt="<?php echo esc_attr($image2['alt']); ?>" />
                                        </div>
                                    <?php endif; ?>
 
-                                   <?php
-                                   if(!empty($vantagem["image_service_2"])):
-                                       ?>
-                                       <div class="w-100 m-top-20">
-                                           <img src="<?php echo $vantagem["image_service_2"]["sizes"]["post-blog"]; ?>" class="w-100" alt="<?php echo $vantagem["image_service_2"]["alt"]; ?>" title="<?php echo $vantagem["image_service_2"]["description"]; ?>">
-                                       </div>
-                                   <?php endif; ?>
-
-                                   <?php
-                                   if(!empty($vantagem["description_image_2"])):
-                                       ?>
-                                       <div class="w-100">
-                                           <img src="<?php echo $vantagem["description_image_2"]["sizes"]["800"]; ?>" class="w-100" alt="<?php echo $vantagem["description_image_2"]["alt"]; ?>" title="<?php echo $vantagem["description_image_2"]["description"]; ?>">
-                                       </div>
-                                   <?php endif; ?>
                                </aside>
                            </div>
                     <?php
