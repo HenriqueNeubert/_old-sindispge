@@ -1,0 +1,68 @@
+
+.title-3{
+    @include font($secondary_color, 1.4em, black, 1.4em);
+}
+
+.list-contact{
+    background: #EBEBEB;
+    iframe{
+        @extend .b-radius-20;
+    }
+}
+
+.list-form-1{
+    width: 520px;
+    fieldset{
+        padding: 0 10px;
+        input, textarea{ 
+            padding: 0 10px;      
+            height: 35px;
+            background: #ffffff;
+            border: none;
+            @extend .b-radius-20;
+            @include font($main-color, 1.4em, black, 35px);
+        }
+        textarea{
+            height: 170px;
+        }
+    }
+}
+
+.list-footer{
+    .main-menu-2{
+        ul{
+            @extend .d_flex, .wrap, .direction-column;
+            li{
+                margin-top: 20px;
+                &:first-of-type{
+                    margin-top: 0;
+                }
+                a{
+                    @include font($grey, 1em, black);
+                    &:hover{
+                        color: $secondary_color;
+                    }
+                }
+            }
+        }
+    }
+    .social{
+        li{
+            padding: 0 5px;
+            a{
+                &:hover{
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+}
+
+.copyright{
+    div{
+        width: 42px;
+    }
+    span{
+        @include font($grey, 1.4em, black);
+    }
+}

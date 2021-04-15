@@ -1,0 +1,268 @@
+
+
+@mixin responsive($media){
+
+    @each $name, $w in $width {
+        .w-#{$media}-#{$name}{width: #{$w}!important;}
+    }
+    .w-#{$media}-auto{width: auto!important;}
+    .w-#{$media}-100{width: 100%!important;max-width: 100%!important;min-width: 100%!important;margin-left: 0!important;margin-right: 0!important;padding-left: 0!important;padding-right: 0!important;}
+    @each $name, $i in $size{
+        .f-size-#{$media}-#{$name}{font-size: #{$i}!important;}
+    }
+    p-right-#{$media}-0{padding-right: 0!important;}
+    @each $name, $i in $increment {
+        .p-top-#{$media}-#{$name}{padding-top: #{$i}!important;}
+    }
+    @each $name, $i in $increment {
+        .p-bottom-#{$media}-#{$name}{padding-bottom: #{$i}!important;}
+    }
+    @each $name, $i in $increment {
+        .m-top-#{$media}-#{$name}{margin-top: #{$i}!important;}
+    }
+    @each $name, $i in $increment {
+        .m-bottom-#{$media}-#{$name}{margin-bottom: #{$i}!important;}
+    }
+    @each $name, $i in $increment2 {
+        .m-left-#{$media}-#{$name}{margin-left: #{$i}!important;}
+    }
+    @each $name, $i in $increment2 {
+        .m-right-#{$media}-#{$name}{margin-right: #{$i}!important;}
+    }
+    @each $name, $i in $increment2 {
+        .p-left-#{$media}-#{$name}{padding-left: #{$i}!important;}
+    }
+    @each $name, $i in $increment2 {
+        .p-right-#{$media}-#{$name}{padding-right: #{$i}!important;}
+    }
+    .direction-#{$media}-column{@include flex_direction(column);}
+    .self-#{$media}-center{@include align-self(center);}
+    .justify-#{$media}-space{@include justify_content(space-between);}
+    .justify-#{$media}-center{@include justify_content(center);}
+    .display-#{$media}-block{display: block!important;}
+    .display-#{$media}-none{display: none!important;}
+    .f-#{$media}-n{float: none!important;}
+    .f-#{$media}-r{float: right!important;}
+    .f-#{$media}-l{float: left!important;}
+    .t-align-#{$media}-c{text-align: center;}
+    .position-#{$media}-relative{position: relative;}
+    .top-#{$media}-0{top: 0;}
+    .right-#{$media}-0{right: 0;}
+}
+$media: 1500;
+@include mq($media) {
+    .w-#{$media}-50{width: 50%!important;}
+    .w-#{$media}-100{width: 100%!important;max-width: 100%!important;min-width: 100%!important;margin-left: 0!important;margin-right: 0!important;padding-left: 0!important;padding-right: 0!important;}
+    .p-left-#{$media}-50{padding-left: 50px;}
+    .m-top-#{$media}-30{margin-top: 30px;}
+    // Edit
+}
+$media: 1250;
+@include mq($media) {
+    .m-left-#{$media}-10-px{margin-left: 10px!important;}
+    .m-left-#{$media}-20-px{margin-left: 20px!important;}
+    .m-left-#{$media}-50-px{margin-left: 50px!important;}
+    .m-right-#{$media}-0{margin-right: 0!important;}
+    .m-right-#{$media}-50-px{margin-right: 50px!important;}
+    .m-top-#{$media}-30-px{margin-top: 30px!important;}
+    .f-size-#{$media}-12{font-size: 1.2em;}
+    .display-#{$media}-none{display: none!important;}
+    .w-#{$media}-100{width: 100%!important;max-width: 100%!important;min-width: 100%!important;margin-left: 0!important;margin-right: 0!important;padding-left: 0!important;padding-right: 0!important;}
+    .direction-#{$media}-column{@include flex_direction(column);}
+    // Edit
+}
+$media: 1024;
+@include mq($media) {
+    .max-w-#{$media}-100{
+        max-width: 100%;
+    }
+    .display-#{$media}-flex{
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+    }
+    .order-#{$media}-1{
+        @include flex_order(1);
+    }
+    .order-#{$media}-2{
+        @include flex_order(2);
+    }
+    .h-#{$media}-auto{height: auto!important;}
+    .h-#{$media}-350-px{height: 350px!important;}
+    .border-#{$media}-none{
+        border: none!important;
+    }
+    @include responsive($media);
+    // Edit
+    .action-menu {
+        margin-left: 25px;
+        &:hover span {
+            background: $main_color_1;
+        }
+        span {
+            float: left;
+            width: 40px;
+            clear: both;
+            height: 4px;
+            margin-top: 3px;
+            background: $white;
+            &:first-of-type {
+                margin-top: 0;
+            }
+        }
+    }
+    .main-menu{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        margin-top: 0;
+        background: $secondary_color;
+        .close-menu{
+            background: $main_color;
+            @include font($secondary_color, 2em, 700);
+            padding: 20px 5%!important;
+        }
+        ul, ul li, ul li a{
+            float: left;
+            width: 100%;
+        }
+        ul li{
+            margin: 0!important;
+            border-bottom: 1px solid $main_color;
+            a{
+                font-weight: 700;
+                padding: 25px 5%!important;
+                &::before{
+                    display: none;
+                }
+            }
+        }
+    }
+    // Edit
+    .p-top-100, .p-top-80{
+        padding-top: 30px;
+    }
+    .p-bottom-100, .p-bottom-80{
+        padding-bottom: 30px;
+    }
+    .m-top-100, .m-top-50, .m-top-80{
+        margin-top: 30px;
+    }
+    .list-covenants, .list-news, .list-calendary{
+        .item{
+            width: 50%;
+        }
+    }
+    .title-2{
+        font-size: 2.6em;
+    }
+    .list-calendary{
+        .item{
+            background: #DFDFDF!important;
+            &:last-of-type{
+                background: #DFDFDF!important;
+            }
+            &:nth-of-type(4n+2), &:nth-of-type(4n+3){
+                background: #EBEBEB!important;
+            }
+        }
+    }
+    .list-footer .main-menu-2 ul li{
+        @extend .self-1024-center;
+    }
+
+    .info-footer{
+        figure{
+            padding-top: 300px;
+            -webkit-box-ordinal-group: 2;   // OLD - iOS 6-, Safari 3.1-6 */
+            -moz-box-ordinal-group: 2;      // OLD - Firefox 19- */
+            -ms-flex-order: 2;              // TWEENER - IE 10 */
+            -webkit-order: 2;               // NEW - Chrome */
+            order: 2;  
+            img{
+                right: auto;
+            }  
+        }
+        aside{          
+            padding-left: 0;  
+            -webkit-box-ordinal-group: 1;   // OLD - iOS 6-, Safari 3.1-6 */
+            -moz-box-ordinal-group: 1;      // OLD - Firefox 19- */
+            -ms-flex-order: 1;              // TWEENER - IE 10 */
+            -webkit-order: 1;               // NEW - Chrome */
+            order: 1;           
+        }       
+    }
+}
+
+$media: 800;
+@include mq($media) {
+    .h-#{$media}-300-px {
+        height: 300px;
+    }
+    .order-800-2{
+        @include flex_order(2);
+    }
+    @include responsive($media);
+    // Edit
+}
+$media: 600;
+@include mq($media){
+    .h-#{$media}-250-px{height: 250px!important;}
+    //@include responsive($media);
+    .w-#{$media}-100{width: 100%!important;max-width: 100%!important;min-width: 100%!important;margin-left: 0!important;margin-right: 0!important;padding-left: 0!important;padding-right: 0!important;}
+ 
+    .m-top-#{$media}-10{margin-top: 10px!important;}
+    .justify-#{$media}-center{@include justify_content(center);}
+    .t-align-#{$media}-c{text-align: center;}
+       // Edit
+
+    .container{
+        padding-left: 0!important;
+        padding-right: 0!important;
+    }
+    .display-#{$media}-none{display: none!important;}
+    .title-2{
+        font-size: 2.4em;
+    }
+    .list-covenants, .list-news, .list-calendary{
+        .item{
+            width: 100%;
+        }
+    }
+    .list-calendary{
+        .item{
+            background: #EBEBEB!important;
+            &:nth-of-type(8), &:last-of-type{
+                background: #EBEBEB!important;
+            }
+            &:nth-of-type(2n+1){
+                background: #DFDFDF!important;
+            }
+        }
+    }
+    .info-footer{
+        figure{
+            padding-top: 175px;             
+            img{
+                width: 300px;
+            }  
+        }           
+    }
+}
+
+$media: 400;
+@include mq($media){
+
+    .info-footer{
+        figure{
+            padding-top: 120px;             
+            img{
+                width: 225px;
+            }  
+        }           
+    }
+
+}

@@ -1,0 +1,65 @@
+/*
+Error: Undefined mixin 'mq'.
+        on line 53 of scss/responsive copy.scss, in `mq'
+        from line 53 of scss/responsive copy.scss
+
+48:     .position-#{$media}-relative{position: relative;}
+49:     .top-#{$media}-0{top: 0;}
+50:     .right-#{$media}-0{right: 0;}
+51: }
+52: $media: 1500;
+53: @include mq($media) {
+54:     .w-#{$media}-50{width: 50%!important;}
+55:     .w-#{$media}-100{width: 100%!important;max-width: 100%!important;min-width: 100%!important;margin-left: 0!important;margin-right: 0!important;padding-left: 0!important;padding-right: 0!important;}
+56:     .p-left-#{$media}-50{padding-left: 50px;}
+57:     .m-top-#{$media}-30{margin-top: 30px;}
+58:     // Edit
+
+Backtrace:
+scss/responsive copy.scss:53:in `mq'
+scss/responsive copy.scss:53
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:348:in `block in visit_mixin'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/stack.rb:98:in `block in with_mixin'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/stack.rb:135:in `with_frame'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/stack.rb:98:in `with_mixin'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:346:in `visit_mixin'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/stack.rb:135:in `with_frame'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:157:in `visit'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:10:in `visit'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `each'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:320:in `block in watch'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
+C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined mixin 'mq'.\A         on line 53 of scss/responsive copy.scss, in `mq'\A         from line 53 of scss/responsive copy.scss\A \A 48:     .position-#{$media}-relative{position: relative;}\A 49:     .top-#{$media}-0{top: 0;}\A 50:     .right-#{$media}-0{right: 0;}\A 51: }\A 52: $media: 1500;\A 53: @include mq($media) {\A 54:     .w-#{$media}-50{width: 50%!important;}\A 55:     .w-#{$media}-100{width: 100%!important;max-width: 100%!important;min-width: 100%!important;margin-left: 0!important;margin-right: 0!important;padding-left: 0!important;padding-right: 0!important;}\A 56:     .p-left-#{$media}-50{padding-left: 50px;}\A 57:     .m-top-#{$media}-30{margin-top: 30px;}\A 58:     // Edit"; }

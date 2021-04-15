@@ -1,0 +1,43 @@
+Metadata-Version: 2.0
+Name: django-wsgi
+Version: 1.0b1
+Summary: Enhanced WSGI support for Django applications
+Home-page: https://pythonhosted.org/django-wsgi/
+Author: 2degrees Limited
+Author-email: 2degrees-floss@googlegroups.com
+License: BSD (http://dev.2degreesnetwork.com/p/2degrees-license.html)
+Keywords: django wsgi webob web
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI
+Classifier: Topic :: Security
+Requires-Dist: Django (>=1.1)
+Requires-Dist: WebOb (>=1.5)
+Requires-Dist: setuptools
+Requires-Dist: six (==1.10.0)
+
+django-wsgi -- WSGI as first-class citizen in Django
+====================================================
+
+.. image:: https://travis-ci.org/2degrees/django-wsgi.svg?branch=master
+    :target: https://travis-ci.org/2degrees/django-wsgi
+
+.. image:: https://coveralls.io/repos/2degrees/django-wsgi/badge.svg?branch=master&service=github
+    :target: https://coveralls.io/github/2degrees/django-wsgi?branch=master
+
+django-wsgi unlocks Django applications so developers can take advantage of the
+wealth of existing WSGI software, as the other popular Python frameworks do. It
+won't break you existing Django applications because it's 100% compatible with
+Django and you can start using the functionality offered by this library
+progressively. It should be really easy to get started, particularly for
+developers who are familiar with frameworks like Pylons or TurboGears.
+
+

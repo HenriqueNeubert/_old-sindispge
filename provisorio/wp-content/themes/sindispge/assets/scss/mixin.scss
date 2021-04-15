@@ -1,0 +1,211 @@
+@mixin selection {
+  ::-moz-selection { @content; }
+  ::selection { @content; }
+}
+@mixin mq($screen) {
+  @media (max-width: $screen+'px') {
+    @content;
+  }
+}
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+@mixin flex($value, $alt : 100%){
+  -webkit-box-flex: $value;      // OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: $value;         // OLD - Firefox 19- */
+  width: $alt;               // For old syntax, otherwise collapses. */
+  -webkit-flex: $value;          // Chrome */
+  -ms-flex: $value;              // IE 10 */
+  flex: $value;                  // NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+@mixin flex_order($value : initial){
+  -webkit-box-ordinal-group: $value;   // OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-ordinal-group: $value;      // OLD - Firefox 19- */
+  -ms-flex-order: $value;              // TWEENER - IE 10 */
+  -webkit-order: $value;               // NEW - Chrome */
+  order: $value;                       // NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+// https://www.w3schools.com/cssref/playit.asp?filename=playcss_flex-direction&preval=row
+@mixin flex_direction($value : row){
+  -webkit-flex-direction: $value; // Safari 6.1+ */
+  flex-direction: $value;
+}
+// https://www.w3schools.com/cssref/playit.asp?filename=playcss_flex-flow
+@mixin flex_flow($value : row){
+  -webkit-flex-flow: $value; // Safari 6.1+ */
+  flex-flow: $value;
+}
+@mixin flex_grow($value : initial){
+  -webkit-flex-grow: $value;
+  flex-grow: $value;
+}
+@mixin flex_shrink($value : initial){
+  -webkit-flex-shrink: $value;
+  flex-shrink: $value;
+}
+@mixin flex_wrap($value : initial){
+  -webkit-flex-wrap: $value;
+  flex-wrap: $value;
+}
+@mixin flex_basis($value : initial){
+  -webkit-flex-basis: $value;
+  flex-basis: $value;
+  max-width: $value;
+}
+@mixin justify_content($value: flex-start, $value2 : justify){
+  -webkit-box-pack: $value;
+  -moz-box-pack: $value2;
+  -ms-flex-pack: $value2;
+  -webkit-justify-content: $value;
+  justify-content: $value;
+}
+@mixin align_content($value: flex-start){
+  align-content: $value;
+}
+@mixin align-items($value){
+  -webkit-align-items: $value; // Safari 7.0+
+  align-items: $value;
+}
+@mixin degrade($value, $value1){
+  background: -moz-linear-gradient(top, $value, $value1) repeat-X;
+  background: -webkit-gradient(linear, left top, left bottom, from($value), to($value1)) repeat-X;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr="+$value+", endColorstr="+$value1+")";
+  filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr="+$value+", endColorstr="+$value1+")";
+}
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+@mixin align-self($value: center){
+
+  align-self: $value;
+}
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
+  @include pseudo($pos: $position);
+  width: 0;
+  height: 0;
+  @if $round {
+    border-radius: 3px;
+  }
+  @if $direction == down {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+    margin-top: 0 - round( $size / 2.5 );
+  } @else if $direction == up {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+    margin-bottom: 0 - round( $size / 2.5 );
+  } @else if $direction == right {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+    margin-right: -$size;
+  } @else if  $direction == left {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+    margin-left: -$size;
+  }
+}
+@mixin responsive-ratio($x,$y, $pseudo: false) {
+  $padding: unquote( ( $y / $x ) * 100 + '%' );
+  @if $pseudo {
+    &::before {
+      @include pseudo($pos: relative);
+      width: 100%;
+      padding-top: $padding;
+    }
+  } @else {
+    padding-top: $padding;
+  }
+}
+@mixin unselectable {
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+@mixin css-placeholder($id: '*', $color: $color_all, $font: $main_font) {
+  #{$id}::-moz-placeholder {
+    color: $color !important;
+    font-family: $font;
+  }
+  #{$id}:-moz-placeholder {
+    color: $color !important;
+    font-family: $font;
+  }
+  #{$id}:-ms-input-placeholder {
+    color: $color !important;
+    font-family: $font;
+  }
+  #{$id}::-webkit-input-placeholder {
+    color: $color !important;
+    font-family: $font;
+  }
+}
+@mixin border-radius($value:0){
+  -moz-border-radius: $value;
+  -webkit-border-radius: $value;
+  -khtml-border-radius: $value;
+  border-radius: $value;
+}
+@mixin box-shadow($value: 3px 3px 21px -11px rgba(0, 0, 0, 0.4)){
+  -moz-box-shadow:    $value;
+  -webkit-box-shadow: $value;
+  box-shadow:         $value;
+}
+@mixin box-sizing(){
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@mixin calc-width($value: 100%, $aux: width){
+  #{$aux}: -webkit-calc(#{$value});
+  #{$aux}: -moz-calc(#{$value});
+  #{$aux}: calc(#{$value});
+}
+@mixin font($color:$color_all, $size:1.4em, $weight: false, $lineHeight: false){
+  color: $color;
+  font-size: $size;
+    @if($weight){
+      @if($weight == extrabold){
+        font-family: $third_font;
+      }
+      @if($weight == bold){
+        font-family: $secondary_font;
+      }
+      @if($weight == black){
+        font-family: $four_font;
+      }
+    }
+    @if($lineHeight){
+        line-height: $lineHeight;
+    }
+}
+@mixin text($el,$color, $size, $weight:300, $line-height: 1.4em){
+  #{$el} *{color: $color;}
+  #{$el} p{float: left; width:100%;word-wrap: break-word;margin-bottom: 20px;letter-spacing: .8px;line-height: $line-height;font-weight: $weight;font-size: $size;}
+  #{$el} p.m-top-30{margin-top: 30px;}
+  #{$el} p:last-of-type{margin-bottom: 0;}
+  #{$el} strong, #{$el} strong *{@extend .font-4;color: $color}
+  #{$el} a {text-decoration: underline;color: #333333}
+  #{$el} a:hover {text-decoration: none;}
+  #{$el} em{font-style: italic;}
+    #{$el} img{max-width: 100%;margin-bottom: 20px;}
+  #{$el} ul, #{$el} ol{float:right;@include calc-width('100% - 20px');list-style: disc;margin-bottom: 20px!important;}
+  #{$el} ul li, #{$el} ol li {
+    float:left; width:100%;margin-top: 5px;text-align: left;letter-spacing: .8px;line-height: $line-height;font-weight: $weight;font-size: $size;
+    &:first-of-type{margin-top: 0!important;}
+  }
+}
