@@ -306,7 +306,7 @@ blockquote, q {
   float: left;
   width: 95%!important; }
 
-.w-100 {
+.w-100, .box-form form label, .box-form form p span {
   float: left;
   width: 100%!important; }
 
@@ -2244,17 +2244,13 @@ header {
   width: 600px;
   max-width: 100%;
   margin-top: 10px; }
+  .box-form form label {
+    background: transparent !important; }
   .box-form form p {
     float: left;
     width: 100%; }
     .box-form form p span {
       margin-top: 20px; }
-    .box-form form p span.your-email {
-      width: 50%;
-      padding-left: 10px; }
-    .box-form form p span.your-name {
-      width: 50%;
-      padding-right: 10px; }
     .box-form form p span.your-fone, .box-form form p span.your-message {
       width: 100%; }
   .box-form form input, .box-form form textarea {
@@ -2318,12 +2314,13 @@ span.wpcf7-not-valid-tip {
 div.wpcf7-validation-errors, div.wpcf7-acceptance-missing {
   color: #C11C2D !important; }
 
-.list-service {
-  background: red !important; }
-  .list-service .item {
-    margin-top: 40px !important; }
-    .list-service .item:last-of-type {
-      margin-top: 0 !important; }
+.ajax-loader {
+  background-repeat: no-repeat !important; }
+
+.list-service .item {
+  margin-top: 40px !important; }
+  .list-service .item:last-of-type {
+    margin-top: 0 !important; }
 
 .pagination a {
   line-height: 1.4em !important;
@@ -2352,6 +2349,16 @@ div.wpcf7-validation-errors, div.wpcf7-acceptance-missing {
 .list-juridico .item:nth-of-type(2n) aside {
   padding: 0 !important;
   margin-right: 15px; }
+
+.list-download li {
+  width: 100%;
+  margin-top: 10px; }
+  .list-download li a {
+    color: #346f34;
+    font-size: 1.6em;
+    line-height: 1em; }
+    .list-download li a:hover {
+      color: #FFCF36; }
 
 .title-3 {
   color: #FFCF36;

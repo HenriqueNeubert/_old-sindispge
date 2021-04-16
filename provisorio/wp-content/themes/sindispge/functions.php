@@ -19,7 +19,7 @@ add_theme_support('menus');
 
 add_action('wp_enqueue_scripts', 'axel_enqueue_scripts');
 function axel_enqueue_scripts() {
-    wp_enqueue_style('estilo', get_stylesheet_directory_uri() . '/assets/css/style.css');
+    wp_enqueue_style('estilo', get_stylesheet_directory_uri() . '/assets/css/style.css?'.date('ydms'));
 
     wp_enqueue_script('main', get_stylesheet_directory_uri() . '/assets/js/main.js', array('jquery'));
     wp_enqueue_script('masked', get_stylesheet_directory_uri() . '/assets/js/plugins/masked.js', array('jquery'));

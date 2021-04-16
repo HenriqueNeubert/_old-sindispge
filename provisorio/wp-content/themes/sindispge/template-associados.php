@@ -5,20 +5,20 @@
 get_header();
 ?>
 
-<section class="w-100 relative main-banner">
-    <div class="w-100 h-100 absolute z-index-2 top-0 left-0 d_flex wrap direction-column justify-end">
-        <article class="w-100">
-            <div class="center container">
-                <div class="w-100 m-bottom-80">
-                    <strong strong class="w-100">
-                        Serviços
-                    </strong>
+    <section class="w-100 relative main-banner">
+        <div class="w-100 h-100 absolute z-index-2 top-0 left-0 d_flex wrap direction-column justify-end">
+            <article class="w-100">
+                <div class="center container">
+                    <div class="w-100 m-bottom-80">
+                        <strong class="w-100">
+                            <?php the_title(); ?>
+                        </strong>
+                    </div>
                 </div>
-            </div>
-        </article>
-    </div>
-    <img class="w-100 relative z-index-1" src="<?php echo get_template_directory_uri(); ?>/uploads/banner/banner-page.jpg" title="Notícias" alt="Notícias" />
-</section>
+            </article>
+        </div>
+        <img class="w-100 relative z-index-1" src="<?php echo get_template_directory_uri(); ?>/uploads/banner/banner-page.jpg" title="Notícias" alt="Notícias" />
+    </section>
 
     <section class="w-100 p-top-100 p-bottom-100">
         <div class="center container">
@@ -44,7 +44,7 @@ get_header();
                 </aside>
             </article>
             <h3 class="w-100 m-top-80 t-align-c title-2" id="form">
-                FILIE-SE
+                <?php the_title(); ?>
             </h3>
             <article class="w-100 d_flex justify-center box-form box-form-2">
                 <?php the_field("formulario"); ?>

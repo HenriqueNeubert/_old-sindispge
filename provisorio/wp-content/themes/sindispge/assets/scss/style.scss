@@ -371,20 +371,25 @@ header {
       width: 600px;
       max-width: 100%;
       margin-top: 10px;
+      label{
+        @extend .w-100;
+        background: transparent!important;
+      }
       p{
         float: left;
         width: 100%;
         @extend .d_flex, .wrap;
         span{
+          @extend .w-100;
           margin-top: 20px;
         }
         span.your-email{
-          width: 50%;
-          padding-left: 10px;
+          //width: 50%;
+          //padding-left: 10px;
         }
         span.your-name{
-          width: 50%;
-          padding-right: 10px;
+          //width: 50%;
+          //padding-right: 10px;
         }
         span.your-fone, span.your-message{
           width: 100%;
@@ -456,9 +461,12 @@ span.wpcf7-not-valid-tip {
 div.wpcf7-validation-errors, div.wpcf7-acceptance-missing{
     color: #C11C2D!important;
 }
+.ajax-loader{
+  background-repeat: no-repeat!important;
+}
 
 
-.list-service{ background: red!important;
+.list-service{
     .item{
         margin-top: 40px!important;
         &:last-of-type{
@@ -507,6 +515,19 @@ div.wpcf7-validation-errors, div.wpcf7-acceptance-missing{
         @extend .flex-order-1;
         padding:0!important;
         margin-right: 15px;
+      }
+    }
+  }
+}
+
+.list-download{
+  li{
+    width: 100%;
+    margin-top: 10px;
+    a{
+      @include font(#346f34, 1.6em, 700, 1em);
+      &:hover{
+        color: $secondary_color;
       }
     }
   }
